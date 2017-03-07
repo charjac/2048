@@ -6,8 +6,8 @@ electronInstaller.createWindowsInstaller({
     authors: 'Carlito',
     noMsi: true,
     setupExe: '2048_setup.exe',
-    exe: '2048.exe',
-    setupIcon: 'icon.png'
+    exe: '2048-app.exe',
+  //  setupIcon: 'icon.png'
 })
     .then(() => console.log("It worked!"), (e) => console.log(`No dice: ${e.message}`))
     .catch((err) => {

@@ -24,9 +24,11 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^1.4.1",
-    "electron-installer-debian": "^0.5.0",
     "electron-packager": "^8.5.2",
     "electron-winstaller": "^2.5.2",
     "node-sass": "^4.5.0"
+  },
+  "dependencies": {
+    "electron-builder": "^15.1.1"
   }
 }

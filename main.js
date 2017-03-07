@@ -21,7 +21,7 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    icon: path.join(__dirname, 'icon.png')
+    icon: 'icon.png'
   })
 
   mainWindow.maximize()
@@ -36,7 +36,7 @@ function createWindow () {
   mainWindow.setMenu(null)
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

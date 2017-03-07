@@ -141,5 +141,7 @@ HTMLActuator.prototype.clearMessage = function () {
   // IE only takes one value to remove at a time.
   this.messageContainer.classList.remove("game-won");
   this.messageContainer.classList.remove("game-over");
-  this.messageContainer.removeChild(this.img)
+  if (this.img) {
+    this.messageContainer.removeChild(this.img)
+  }
 };
