@@ -130,6 +130,11 @@ HTMLActuator.prototype.message = function (won) {
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+  if (!won) {
+    var img = document.createElement("img")
+    img.src = "assets/img/teddy.gif"
+    this.messageContainer.insertBefore(img, this.messageContainer.firstChild)
+  }
 };
 
 HTMLActuator.prototype.clearMessage = function () {

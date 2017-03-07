@@ -177,8 +177,7 @@ hr {
       font-size: 60px;
       font-weight: bold;
       height: 60px;
-      line-height: 60px;
-      margin-top: 222px; }
+      line-height: 60px; }
     .game-container .game-message .lower {
       display: block;
       margin-top: 59px; }
@@ -531,7 +530,7 @@ hr {
   line-height: 42px;
   margin-bottom: 0; }
 
-.restart-button {
+.restart-button, .save-button, .start-button {
   display: inline-block;
   background: #8f7a66;
   border-radius: 3px;
@@ -542,33 +541,8 @@ hr {
   line-height: 42px;
   display: block;
   text-align: center;
-  float: right; }
-
-.save-button {
-  display: inline-block;
-  background: #8f7a66;
-  border-radius: 3px;
-  padding: 0 20px;
-  text-decoration: none;
-  color: #f9f6f2;
-  height: 40px;
-  line-height: 42px;
-  display: block;
-  text-align: center;
-  float: right; }
-
-.start-button {
-  display: inline-block;
-  background: #8f7a66;
-  border-radius: 3px;
-  padding: 0 20px;
-  text-decoration: none;
-  color: #f9f6f2;
-  height: 40px;
-  line-height: 42px;
-  display: block;
-  text-align: center;
-  float: right; }
+  float: right;
+  cursor: pointer; }
 
 .game-explanation {
   margin-top: 50px; }
@@ -641,8 +615,7 @@ hr {
         font-size: 60px;
         font-weight: bold;
         height: 60px;
-        line-height: 60px;
-        margin-top: 222px; }
+        line-height: 60px; }
       .game-container .game-message .lower {
         display: block;
         margin-top: 59px; }

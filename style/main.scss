@@ -212,7 +212,7 @@ hr {
         font-weight: bold;
         height: 60px;
         line-height: 60px;
-        margin-top: 222px;
+        // margin-top: 222px;
         // height: $field-width;
         // line-height: $field-width;
       }
@@ -462,25 +462,12 @@ hr {
   margin-bottom: 0;
 }
 
-.restart-button {
+.restart-button, .save-button, .start-button {
   @include button;
   display: block;
   text-align: center;
   float: right;
-}
-
-.save-button {
-  @include button;
-  display: block;
-  text-align: center;
-  float: right;
-}
-
-.start-button {
-  @include button;
-  display: block;
-  text-align: center;
-  float: right;
+  cursor: pointer;
 }
 
 .game-explanation {

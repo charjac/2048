@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "2048 desktop app",
   "main": "main.js",
+  "private": true,
   "scripts": {
-    "start": "electron .",
     "sass": "node-sass style/main.scss -o style",
+    "start": "npm run sass && electron .",
     "build:win": "npm run sass && electron-packager . 2048-app --platform=win32 --arch=x64 --electron-version --out dist/",
     "build:linux": "npm run sass && electron-packager . 2048-app --platform=linux --arch=x64 --electron-version --out dist/",
-    "debian": "npm run build:linux && electron-installer-debian --src dist/2048-app-linux-x64/ --dest dist/installers/ --arch amd64 --icon favicon.ico",
+    "debian": "npm run build:linux && electron-installer-debian --src dist/2048-app-linux-x64/ --dest dist/installers/ --arch amd64 --icon icon.png",
     "windows": "npm run build:win && node scripts/buildWindows"
   },
   "repository": "https://github.com/electron/electron-quick-start",
@@ -19,7 +20,7 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Charles Jacquin",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^1.4.1",
