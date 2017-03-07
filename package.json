@@ -1,0 +1,31 @@
+{
+  "name": "2048-app",
+  "version": "1.0.0",
+  "description": "2048 desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "sass": "node-sass style/main.scss -o style",
+    "build:win": "npm run sass && electron-packager . 2048-app --platform=win32 --arch=x64 --electron-version --out dist/",
+    "build:linux": "npm run sass && electron-packager . 2048-app --platform=linux --arch=x64 --electron-version --out dist/",
+    "debian": "npm run build:linux && electron-installer-debian --src dist/2048-app-linux-x64/ --dest dist/installers/ --arch amd64 --icon favicon.ico",
+    "windows": "npm run build:win && node scripts/buildWindows"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.4.1",
+    "electron-installer-debian": "^0.5.0",
+    "electron-packager": "^8.5.2",
+    "electron-winstaller": "^2.5.2",
+    "node-sass": "^4.5.0"
+  }
+}
