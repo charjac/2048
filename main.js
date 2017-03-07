@@ -21,10 +21,10 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 950,
     icon: path.join(__dirname, 'icon.png')
   })
+
+  mainWindow.maximize()
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({

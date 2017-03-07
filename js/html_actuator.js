@@ -131,9 +131,9 @@ HTMLActuator.prototype.message = function (won) {
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
   if (!won) {
-    var img = document.createElement("img")
-    img.src = "assets/img/teddy.gif"
-    this.messageContainer.insertBefore(img, this.messageContainer.firstChild)
+    this.img = document.createElement("img");
+    img.src = "assets/img/teddy.gif";
+    this.messageContainer.insertBefore(this.img, this.messageContainer.firstChild);
   }
 };
 
@@ -141,4 +141,5 @@ HTMLActuator.prototype.clearMessage = function () {
   // IE only takes one value to remove at a time.
   this.messageContainer.classList.remove("game-won");
   this.messageContainer.classList.remove("game-over");
+  this.messageContainer.removeChild(this.img)
 };
