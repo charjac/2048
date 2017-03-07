@@ -132,7 +132,7 @@ HTMLActuator.prototype.message = function (won) {
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
   if (!won) {
     this.img = document.createElement("img");
-    img.src = "assets/img/teddy.gif";
+    this.img.src = "assets/img/teddy.gif";
     this.messageContainer.insertBefore(this.img, this.messageContainer.firstChild);
   }
 };
