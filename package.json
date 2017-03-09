@@ -1,34 +1,47 @@
 {
   "name": "2048-app",
   "version": "1.0.0",
-  "description": "2048 desktop app",
+  "description": "2048 desktop app with save and load feature",
   "main": "main.js",
   "private": true,
   "scripts": {
-    "sass": "node-sass style/main.scss -o style",
+    "sass": "node-sass src/style/main.scss -o src/style",
     "start": "npm run sass && electron .",
-    "build:win": "npm run sass && electron-packager . 2048-app --platform=win32 --arch=x64 --electron-version --out dist/",
-    "build:linux": "npm run sass && electron-packager . 2048-app --platform=linux --arch=x64 --electron-version --out dist/",
-    "debian": "npm run build:linux && electron-installer-debian --src dist/2048-app-linux-x64/ --dest dist/installers/ --arch amd64 --icon icon.png",
-    "windows": "npm run build:win && node scripts/buildWindows"
+    "build": "npm run asass && build -wl"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/charjac/2048",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "2048",
+    "save",
+    "load"
   ],
-  "author": "Charles Jacquin",
+  "author": "Charles Jacquin<charles.jacquin@gmail.com>",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^1.4.1",
-    "electron-packager": "^8.5.2",
-    "electron-winstaller": "^2.5.2",
+    "electron-builder": "^15.1.1",
     "node-sass": "^4.5.0"
   },
-  "dependencies": {
-    "electron-builder": "^15.1.1"
+  "build": {
+    "appId": "2048-app",
+    "files": [
+      "index.html",
+      "renderer.js",
+      "main.js",
+      "src/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb"
+      ]
+    }
   }
 }

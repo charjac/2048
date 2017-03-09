@@ -454,6 +454,7 @@ hr {
 
 .above-game {
   @include clearfix;
+  text-align: center;
 }
 
 .game-intro {
@@ -466,8 +467,8 @@ hr {
   @include button;
   display: block;
   text-align: center;
-  float: right;
   cursor: pointer;
+  display: inline-block;
 }
 
 .game-explanation {

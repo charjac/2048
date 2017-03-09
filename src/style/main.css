@@ -520,10 +520,12 @@ hr {
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards; }
 
-.above-game:after {
-  content: "";
-  display: block;
-  clear: both; }
+.above-game {
+  text-align: center; }
+  .above-game:after {
+    content: "";
+    display: block;
+    clear: both; }
 
 .game-intro {
   float: left;
@@ -541,8 +543,8 @@ hr {
   line-height: 42px;
   display: block;
   text-align: center;
-  float: right;
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block; }
 
 .game-explanation {
   margin-top: 50px; }

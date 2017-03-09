@@ -132,7 +132,7 @@ HTMLActuator.prototype.message = function (won) {
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
   if (!won) {
     this.img = document.createElement("img");
-    this.img.src = "assets/img/teddy.gif";
+    this.img.src = "src/assets/img/teddy.gif";
     this.messageContainer.insertBefore(this.img, this.messageContainer.firstChild);
   }
 };
@@ -143,5 +143,6 @@ HTMLActuator.prototype.clearMessage = function () {
   this.messageContainer.classList.remove("game-over");
   if (this.img) {
     this.messageContainer.removeChild(this.img)
+    this.img = null
   }
 };

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title>2048</title>
 
-  <link href="style/main.css" rel="stylesheet" type="text/css">
-  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href="src/style/main.css" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
 <div class="container">
@@ -18,10 +18,10 @@
   </div>
 
   <div class="above-game">
-    <p class="game-intro">Get to the <strong>2048 tile!</strong></p>
-    <i class="save-button fa fa-save"></i>
-    <i class="restart-button fa fa-gamepad"></i>
-    <i class="start-button fa fa-refresh"></i>
+    <!--<p class="game-intro">Get to the <strong>2048 tile!</strong></p>-->
+    <a class="save-button">Save</a>
+    <a class="restart-button">Load</a>
+    <a class="start-button">Restart</a>
   </div>
 
   <div class="game-container">
@@ -66,16 +66,16 @@
   </div>
 </div>
 
-<script src="js/bind_polyfill.js"></script>
-<script src="js/classlist_polyfill.js"></script>
-<script src="js/animframe_polyfill.js"></script>
-<script src="js/keyboard_input_manager.js"></script>
-<script src="js/html_actuator.js"></script>
-<script src="js/grid.js"></script>
-<script src="js/tile.js"></script>
-<script src="js/local_storage_manager.js"></script>
-<script src="js/game_manager.js"></script>
-<script src="js/application.js"></script>
+<script src="src/js/bind_polyfill.js"></script>
+<script src="src/js/classlist_polyfill.js"></script>
+<script src="src/js/animframe_polyfill.js"></script>
+<script src="src/js/keyboard_input_manager.js"></script>
+<script src="src/js/html_actuator.js"></script>
+<script src="src/js/grid.js"></script>
+<script src="src/js/tile.js"></script>
+<script src="src/js/local_storage_manager.js"></script>
+<script src="src/js/game_manager.js"></script>
+<script src="src/js/application.js"></script>
 <script>
   // You can also require other files to run in this process
   require('./renderer.js')
