@@ -7,7 +7,7 @@
   "scripts": {
     "sass": "node-sass src/style/main.scss -o src/style",
     "start": "npm run sass && electron .",
-    "build": "npm run asass && build -wl"
+    "build": "npm run sass && build -wl"
   },
   "repository": "https://github.com/charjac/2048",
   "keywords": [
