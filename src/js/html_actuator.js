@@ -1,3 +1,26 @@
+const winMessages = [
+  "Bien jouer <3 <3",
+  "Aller Rara on lache rien !!!",
+  "smack !!!",
+  "te quiero mucho mucho !!!",
+  "ich liebe dich"
+]
+
+const looseMessages = [
+  "ahahahah cte loozeuse",
+  "chaiii !!!",
+  "t'es nulle :(",
+  "t'es nulle mais jtaime bien quand même",
+  "Bon ...",
+  "Pas pour toi ce jeu",
+  "mon dieu qu'elle est nulle"
+]
+
+function getRandomMessage(array) {
+  var index = Math.ceil(Math.random() * (array.length - 1));
+  return array[index]
+}
+
 function HTMLActuator() {
   this.tileContainer    = document.querySelector(".tile-container");
   this.scoreContainer   = document.querySelector(".score-container");
@@ -126,15 +149,13 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 
 HTMLActuator.prototype.message = function (won) {
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "You win!" : "Game over!";
+  var message =  getRandomMessage(won ? winMessages : looseMessages);
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
-  if (!won) {
-    this.img = document.createElement("img");
-    this.img.src = "src/assets/img/teddy.gif";
-    this.messageContainer.insertBefore(this.img, this.messageContainer.firstChild);
-  }
+  this.img = document.createElement("img");
+  this.img.src = won ? "src/assets/img/fran.gif" : "src/assets/img/teddy.gif";
+  this.messageContainer.insertBefore(this.img, this.messageContainer.firstChild);
 };
 
 HTMLActuator.prototype.clearMessage = function () {

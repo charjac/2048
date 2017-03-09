@@ -1,5 +1,4 @@
 @import url(fonts/clear-sans.css);
-@import url(fonts/font-awesome.css);
 html, body {
   margin: 0;
   padding: 0;
@@ -750,7 +749,7 @@ hr {
   .tile .tile-inner {
     font-size: 35px; }
   .game-message p {
-    font-size: 30px !important;
+    font-size: 10px !important;
     height: 30px !important;
     line-height: 30px !important;
     margin-top: 90px !important; }
