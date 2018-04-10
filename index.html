@@ -1,84 +1,125 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>2048</title>
 
   <link href="src/style/main.css" rel="stylesheet" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <style>
+    label {
+      display: block;
+      color: #7d7d7d;
+    }
+
+    .floatBlock {
+      margin: 0 1.81em 0 0;
+    }
+
+    .labelish {
+      color: #7d7d7d;
+      margin: 0;
+    }
+
+    .save-slots {
+      border: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      break-before: always;
+      margin: 0 0 5px 0;
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-  <div class="heading">
-    <h1 class="title">2048</h1>
-    <div class="scores-container">
-      <div class="score-container">0</div>
-      <div class="best-container">0</div>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">2048</h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+    <div class="above-game">
+      <div class="save-slots">
+        <div class="floatBlock">
+          <label for="uno">
+            <input id="uno" name="saveslot" class="saveslot" type="radio" value="1" /> 1 </label>
+        </div>
+        <div class="floatBlock">
+          <label for="dos">
+            <input id="dos" name="saveslot" class="saveslot" type="radio" value="2" /> 2 </label>
+        </div>
+        <div class="floatBlock">
+          <label for="tres">
+            <input id="tres" name="saveslot" class="saveslot" type="radio" value="3" /> 3 </label>
+        </div>
+      </div>
+      <!--<p class="game-intro">Get to the <strong>2048 tile!</strong></p>-->
+      <a class="save-button">Save</a>
+      <a class="restart-button">Load</a>
+      <a class="start-button">Restart</a>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+          <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
     </div>
   </div>
 
-  <div class="above-game">
-    <!--<p class="game-intro">Get to the <strong>2048 tile!</strong></p>-->
-    <a class="save-button">Save</a>
-    <a class="restart-button">Load</a>
-    <a class="start-button">Restart</a>
-  </div>
-
-  <div class="game-container">
-    <div class="game-message">
-      <p></p>
-      <div class="lower">
-        <a class="keep-playing-button">Keep going</a>
-        <a class="retry-button">Try again</a>
-      </div>
-    </div>
-
-    <div class="grid-container">
-      <div class="grid-row">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-      </div>
-      <div class="grid-row">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-      </div>
-      <div class="grid-row">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-      </div>
-      <div class="grid-row">
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-        <div class="grid-cell"></div>
-      </div>
-    </div>
-
-    <div class="tile-container">
-
-    </div>
-  </div>
-</div>
-
-<script src="src/js/bind_polyfill.js"></script>
-<script src="src/js/classlist_polyfill.js"></script>
-<script src="src/js/animframe_polyfill.js"></script>
-<script src="src/js/keyboard_input_manager.js"></script>
-<script src="src/js/html_actuator.js"></script>
-<script src="src/js/grid.js"></script>
-<script src="src/js/tile.js"></script>
-<script src="src/js/local_storage_manager.js"></script>
-<script src="src/js/game_manager.js"></script>
-<script src="src/js/application.js"></script>
-<script>
-  // You can also require other files to run in this process
-  require('./renderer.js')
-</script>
+  <script src="src/js/bind_polyfill.js"></script>
+  <script src="src/js/classlist_polyfill.js"></script>
+  <script src="src/js/animframe_polyfill.js"></script>
+  <script src="src/js/keyboard_input_manager.js"></script>
+  <script src="src/js/html_actuator.js"></script>
+  <script src="src/js/grid.js"></script>
+  <script src="src/js/tile.js"></script>
+  <script src="src/js/local_storage_manager.js"></script>
+  <script src="src/js/game_manager.js"></script>
+  <script src="src/js/application.js"></script>
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
 </body>
+
 </html>

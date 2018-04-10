@@ -20,7 +20,7 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^1.4.1",
-    "electron-builder": "^15.1.1",
+    "electron-builder": "^20.8.1",
     "node-sass": "^4.5.0"
   },
   "build": {
@@ -43,5 +43,8 @@
         "deb"
       ]
     }
+  },
+  "dependencies": {
+    "electron-debug": "^1.5.0"
   }
 }

@@ -146,7 +146,15 @@ KeyboardInputManager.prototype.keepPlaying = function (event) {
 
 KeyboardInputManager.prototype.saveGame = function (event) {
   event.preventDefault();
-  this.emit("saveGame");
+  const inputs = document.querySelectorAll('.saveslot');
+  let slot
+  Array.from(inputs).forEach((input) => {
+    if (input.checked) {
+      slot = input.value;
+    }
+  })
+  
+  this.emit("saveGame", slot);
 };
 
 KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {

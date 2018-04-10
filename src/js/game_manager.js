@@ -21,8 +21,8 @@ GameManager.prototype.startGame = function () {
   this.setup();
 };
 
-GameManager.prototype.saveGame = function() {
-  this.storageManager.setGameState(this.serialize())
+GameManager.prototype.saveGame = function(slot) {
+  this.storageManager.setGameState(this.serialize(), slot)
 }
 
 // Restart the game
